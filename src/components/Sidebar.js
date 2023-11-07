@@ -6,15 +6,15 @@ export default function Sidebar() {
                 <div className="profile"></div>
             </div>
             <div className="sideCategory">
-                <div className="categoty select">Categoty</div>
-                <div className="categoty">Categoty</div>
-                <div className="categoty">Categoty</div>
-                <div className="categoty">Categoty</div>
-                <div className="categoty">Categoty</div>
-                <div className="categoty">Categoty</div>
-                <div className="categoty">Categoty</div>
-                <div className="categoty">Categoty</div>
-                <div className="categoty">Categoty</div>
+                <div className="category select">Categoty</div>
+                <div className="category">Categoty</div>
+                <div className="category">Categoty</div>
+                <div className="category">Categoty</div>
+                <div className="category">Categoty</div>
+                <div className="category">Categoty</div>
+                <div className="category">Categoty</div>
+                <div className="category">Categoty</div>
+                <div className="category">Categoty</div>
             </div>
         </div>
     );
