@@ -1,12 +1,12 @@
 import './App.css';
 import Search from './components/Search/Search';
-import "./styles.css";
-
+import Post from './components/Post/Post';
 
 function App() {
   return (
     <div className="App">
       <Search />
+      <Post />
     </div>
   );
 }
