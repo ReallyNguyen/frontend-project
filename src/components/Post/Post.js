@@ -1,6 +1,20 @@
 import './Post.css';
+import { useState } from 'react';
+import Comment from '../Comment/Comment';
 
 export default function Post() {
+    const [showComment, setShowComment] = useState(false);
+    const [comments, setComments] = useState([]); // State for managing comments
+
+    const handleCommentClick = () => {
+        setShowComment(!showComment);
+    };
+
+    const addComment = (commentText) => {
+        if (commentText.trim() !== '') {
+            setComments([...comments, commentText]); // Check if comments are being added to the state
+        }
+    };
     return (
         <div className="post">
             <div className="leftAndRight">
@@ -22,7 +36,7 @@ export default function Post() {
                 </div>
                 <div className="rightSide">
                     <div className="header">
-                        <div className="titleAndCategoties">
+                        <div className="titleAndCategories">
                             <h1>Post Title</h1>
                             <div className="categories">
                                 <p className="mainCategories">Category</p>
@@ -61,28 +75,25 @@ export default function Post() {
                             />
                             <p>Like</p>
                         </div>
-                        <div className="comment">
-                            <img
-                                src="/post/comment.svg"
-                                alt="down"
-                            />
-                            <p>Comment</p>
+                        <div className='buttons'>
+                            <button className='comment' onClick={handleCommentClick}>
+                                <img className='commentImg'
+                                    src="/post/comment.svg"
+                                    alt="down"
+                                /> Comment
+                            </button>
                         </div>
                     </div>
-                    <div className='userComment'>
-                        <p className='user'>Comment User</p>
-                        <p>Comment</p>
-                    </div>
-                    <div className='userComment'>
-                        <p className='user'>Comment User</p>
-                        <p>Comment</p>
-                    </div>
-                    <div className='userComment'>
-                        <p className='user'>Comment User</p>
-                        <p>Comment</p>
-                    </div>
+                    {showComment && <Comment onPostComment={addComment} />}
+                    {comments.map((comment, index) => (
+                        <div className="userComment" key={index}>
+                            <p className="user">Comment User</p>
+                            <p>{comment}</p>
+                        </div>
+                    ))}
+
                 </div>
             </div>
         </div>
-    )
+    );
 }

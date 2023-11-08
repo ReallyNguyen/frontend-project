@@ -145,11 +145,35 @@
     margin-top: -7px;
 }
 
+.commentImg {
+    margin-right: 10px;
+}
+
+.comment {
+    border: none;
+    background-color: #fff;
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+
+}
+
 .like {
     margin-right: 40px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    color: #000;
+
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .like p,
