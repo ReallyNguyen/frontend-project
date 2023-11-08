@@ -1,5 +1,7 @@
 import './App.css';
 import Search from './components/Search/Search';
+import "./styles.css";
+
 
 function App() {
   return (
