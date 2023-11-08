@@ -1,0 +1,93 @@
+.commentContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.commentPopup {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 350px;
+    border-radius: 5px;
+    border: 1.5px solid #000;
+    background: #F1F1F1;
+}
+
+.commentCardTitle {
+    display: flex;
+    justify-content: flex-start;
+    margin: 30px;
+    color: #000;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.commentInput {
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    width: 536px;
+    height: 159px;
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.wordCount {
+    color: #000;
+
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.postCommentButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 5px;
+    background: #FFF;
+    border: none;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.10);
+    width: 101px;
+    height: 41px;
+    color: #000;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.postImageCommentButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 170px;
+    height: 41px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    background: #FFF;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.10);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
