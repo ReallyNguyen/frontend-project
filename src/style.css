@@ -3,6 +3,7 @@
 }
 
 .App {
+    background: #F1F1F1;
     font-family: sans-serif;
     text-align: center;
     display: flex;

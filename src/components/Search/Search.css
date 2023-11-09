@@ -38,6 +38,7 @@
 }
 
 .search-input {
+    background: transparent;
     flex: 1;
     border: none;
     outline: none;
