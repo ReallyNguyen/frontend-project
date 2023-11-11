@@ -21,7 +21,7 @@ export default function Post() {
                 <div className="leftSide">
                     <div className="vote">
                         <img
-                            className="arrowDown"
+                            className="arrowUp"
                             src="/post/up-arrow.svg"
                             alt="up"
                         />
