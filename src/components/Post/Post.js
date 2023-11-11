@@ -12,11 +12,16 @@ export default function Post() {
 
     const addComment = (commentText) => {
         if (commentText.trim() !== '') {
-            setComments([...comments, commentText]); // Check if comments are being added to the state
+            setComments([...comments, commentText]);
         }
     };
+
+    const handleCloseComment = () => {
+        setShowComment(false);
+    };
+
     return (
-        <div className="post">
+        <div className={`post ${showComment ? 'with-comment' : ''}`}>
             <div className="leftAndRight">
                 <div className="leftSide">
                     <div className="vote">
@@ -84,14 +89,18 @@ export default function Post() {
                             </button>
                         </div>
                     </div>
-                    {showComment && <Comment onPostComment={addComment} />}
+                    {showComment && (
+                        <Comment
+                            onPostComment={addComment}
+                            onClose={handleCloseComment}
+                        />
+                    )}
                     {comments.map((comment, index) => (
                         <div className="userComment" key={index}>
                             <p className="user">Comment User</p>
                             <p>{comment}</p>
                         </div>
                     ))}
-
                 </div>
             </div>
         </div>

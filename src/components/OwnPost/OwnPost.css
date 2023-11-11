@@ -5,26 +5,11 @@
 
 }
 
-
 .post {
     width: 1097px;
     background-color: white;
     display: flex;
-
     margin-top: 50px;
-}
-
-.post.with-comment .rightSide {
-    position: relative;
-}
-
-.post.with-comment .rightSide .comment-section {
-    position: absolute;
-    width: 100%;
-    /* Adjust as needed */
-    top: 100%;
-    /* Position it below the post content */
-    left: 0;
 }
 
 .leftAndRight {
@@ -33,8 +18,8 @@
     align-items: stretch;
 }
 
-.leftSide {
-    background-color: black;
+.ownleftSide {
+    background-color: #9C9C9C;
     color: white;
     display: flex;
     flex-direction: column;
@@ -53,7 +38,6 @@
 
 .arrowUp {
     margin-top: 1rem;
-    color: #000;
 }
 
 .rightSide {
@@ -78,15 +62,50 @@
     align-items: flex-start;
 }
 
-.author {
-    background-color: black;
-    color: white;
-    width: 66px;
-    height: 66px;
+.editDelete {
     display: flex;
-    justify-content: center;
+
     align-items: center;
-    border-radius: 10px;
+}
+
+.edit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    width: 132px;
+    height: 41px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.10);
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-right: 20px;
+
+
+}
+
+
+.delete {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    width: 132px;
+    height: 41px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.10);
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .mainContent {

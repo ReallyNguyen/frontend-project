@@ -1,7 +1,7 @@
 import './style.css';
 import Search from './components/Search/Search';
 import Post from './components/Post/Post';
-import Comment from './components/Comment/Comment'
+import OwnPost from './components/OwnPost/OwnPost'
 import Sidebar from './components/Sidebar/Sidebar'
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
       <div className="mainContainer">
         <Search />
         <Post />
+        <OwnPost />
       </div>
     </div>
   );
