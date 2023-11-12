@@ -2,29 +2,13 @@
     display: flex;
     align-items: stretch;
     justify-content: center;
-
 }
-
 
 .post {
     width: 1097px;
     background-color: white;
     display: flex;
-
-    margin-top: 50px;
-}
-
-.post.with-comment .rightSide {
-    position: relative;
-}
-
-.post.with-comment .rightSide .comment-section {
-    position: absolute;
-    width: 100%;
-    /* Adjust as needed */
-    top: 100%;
-    /* Position it below the post content */
-    left: 0;
+    height: 29rem
 }
 
 .leftAndRight {
@@ -72,11 +56,13 @@
     justify-content: space-between;
 }
 
-.titleAndCategoties {
+.titleAndCategories {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
 }
+
 
 .author {
     background-color: black;
@@ -98,6 +84,7 @@
 
 .postContent {
     width: 778px;
+    text-align: start;
 }
 
 .image {
@@ -146,6 +133,7 @@
 .line {
     width: 956px;
     border: 2px solid #a5a5a5;
+    margin: 2rem 0;
 }
 
 .likeAndComment {
@@ -204,10 +192,13 @@
     margin: 0;
 }
 
-.userComment p {
-    margin: 5px 10px;
+.commentText {
+    text-align: start;
 }
 
 .user {
     font-weight: bold;
+    text-align: start;
+    margin-right: 10rem;
+    /* Add this line to give the user comment a margin-right */
 }
