@@ -1,0 +1,1 @@
+import './OwnPost.css';
