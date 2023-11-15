@@ -1,4 +1,4 @@
-/* Search.css */
+/* Search.css  */
 
 .container {
     display: flex;
@@ -6,6 +6,8 @@
     align-items: flex-start;
     justify-content: center;
 }
+
+
 
 .button {
     background-color: #E0E0E0;
@@ -38,11 +40,11 @@
 }
 
 .search-input {
+    background: transparent;
     flex: 1;
     border: none;
     outline: none;
     padding: 0 10px;
-    font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
