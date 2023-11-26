@@ -1,8 +1,11 @@
+import React, { useState } from "react";
 import './style.css';
 import Search from './components/Search/Search';
 import Post from './components/Post/Post';
 import OwnPost from './components/OwnPost/OwnPost'
 import Sidebar from './components/Sidebar/Sidebar'
+import { UploadImg } from './components/UploadImg/UploadImg'
+import CategoryDropdown from "./components/ChooseCategory/ChooseCategory";
 
 const initialState = {
   posts: [
@@ -16,6 +19,7 @@ const initialState = {
         { id: 2, user: "BBBcit", text: "Love it" },
         { id: 3, user: "D3 Dudes", text: "Nice one" },
       ],
+      category: "Campus", // Add a category property
     },
     {
       id: 2,
@@ -27,6 +31,7 @@ const initialState = {
         { id: 2, user: "BBBcit", text: "Love it" },
         { id: 3, user: "D3 Dudes", text: "Nice one" },
       ],
+      category: "Student Life", // Add a category property
     },
     {
       id: 3,
@@ -38,24 +43,39 @@ const initialState = {
         { id: 2, user: "BBBcit", text: "Love it" },
         { id: 3, user: "D3 Dudes", text: "Nice one" },
       ],
+      category: "Study Group", // Add a category property
     },
   ],
   editing: null //will be null or "new" or some product's id
 }
 
-function App() {
+export default function App() {
+  const [fileName, setFileName] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const handleFile = (file) => {
+    setFileName(file.name);
+  }
+
+  const handleCategoryChange = (category) => {
+    setSelectedCategory(category);
+  };
+
   return (
     <div className="App">
       <Sidebar />
       <div className="mainContainer">
         <Search />
-        {initialState.posts.map((post) => (
-          <Post key={post.id} post={post} />
-        ))}
+        <UploadImg handleFile={handleFile} />
+        {fileName ? <p>Attach Image {fileName}</p> : null}
+        <CategoryDropdown categories={["Campus", "Student Life", "Study Group", "Housing", "Events", "Program", "Career", "Alumni"]} handleCategoryChange={handleCategoryChange} />
+        {initialState.posts
+          .filter((post) => !selectedCategory || post.category === selectedCategory)
+          .map((post) => (
+            <Post key={post.id} post={post} />
+          ))}
         <OwnPost />
       </div>
     </div>
   );
 }
-
-export default App;
