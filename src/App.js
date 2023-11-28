@@ -6,6 +6,7 @@ import OwnPost from './components/OwnPost/OwnPost'
 import Sidebar from './components/Sidebar/Sidebar'
 import { UploadImg } from './components/UploadImg/UploadImg'
 import CategoryDropdown from "./components/ChooseCategory/ChooseCategory";
+import { filter } from "./utils/helpers";
 
 const initialState = {
   posts: [
@@ -19,7 +20,9 @@ const initialState = {
         { id: 2, user: "BBBcit", text: "Love it" },
         { id: 3, user: "D3 Dudes", text: "Nice one" },
       ],
-      category: "Campus", // Add a category property
+      category: "Campus", // Add a category property,
+      own: false, // post that created by user
+      like: true, // post that liked by user
     },
     {
       id: 2,
@@ -32,6 +35,8 @@ const initialState = {
         { id: 3, user: "D3 Dudes", text: "Nice one" },
       ],
       category: "Student Life", // Add a category property
+      own: true, // post that created by user
+      like: false // post that liked by user
     },
     {
       id: 3,
@@ -44,6 +49,8 @@ const initialState = {
         { id: 3, user: "D3 Dudes", text: "Nice one" },
       ],
       category: "Study Group", // Add a category property
+      own: false, // post that created by user
+      like: true // post that liked by user
     },
   ],
   editing: null //will be null or "new" or some product's id
@@ -52,6 +59,9 @@ const initialState = {
 export default function App() {
   const [fileName, setFileName] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [ownFilterSelection, setOwnFilterSelection] = useState(false);
+  const [likeFilterSelection, setLikeFilterSelection] = useState(false);
+
 
   const handleFile = (file) => {
     setFileName(file.name);
@@ -61,19 +71,23 @@ export default function App() {
     setSelectedCategory(category);
   };
 
+  let filteredState = initialState.posts;
+  filteredState = filter(filteredState, ownFilterSelection, likeFilterSelection)
+
   return (
     <div className="App">
       <Sidebar />
       <div className="mainContainer">
-        <Search />
+        <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
         <UploadImg handleFile={handleFile} />
         {fileName ? <p>Attach Image {fileName}</p> : null}
         <CategoryDropdown categories={["Campus", "Student Life", "Study Group", "Housing", "Events", "Program", "Career", "Alumni"]} handleCategoryChange={handleCategoryChange} />
-        {initialState.posts
+        {filteredState
           .filter((post) => !selectedCategory || post.category === selectedCategory)
           .map((post) => (
             <Post key={post.id} post={post} />
           ))}
+
         <OwnPost />
       </div>
     </div>
