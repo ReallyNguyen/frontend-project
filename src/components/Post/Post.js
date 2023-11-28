@@ -2,7 +2,7 @@ import './Post.css';
 import { useState } from 'react';
 import Comment from '../Comment/Comment';
 
-export default function Post({ post }) {
+export default function Post({ post, selectedCategory }) {
     const [showComment, setShowComment] = useState(false);
     const [comments, setComments] = useState([]); // State for managing comments
     const [currentColorUp, setCurrentColorUp] = useState("white");
@@ -54,7 +54,10 @@ export default function Post({ post }) {
         setShowComment(false);
     };
 
-    return (
+
+    const shouldDisplay = !selectedCategory || post.category === selectedCategory;
+
+    return shouldDisplay ? (
         <div className={`post ${showComment ? 'with-comment' : ''}`}>
             <div className="leftAndRight">
                 <div className="leftSide">
@@ -74,7 +77,7 @@ export default function Post({ post }) {
                         <div className="titleAndCategories">
                             <h1>{post.title}</h1>
                             <div className="categories">
-                                <p className="mainCategories">Category</p>
+                                <p className="mainCategories">{post.postCategory}</p>
                                 <p className="subCategories">Subcategory</p>
                                 <p className="subCategories">Subcategory</p>
                             </div>
@@ -132,5 +135,5 @@ export default function Post({ post }) {
 
             </div>
         </div>
-    );
+    ) : null
 }

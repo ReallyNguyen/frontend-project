@@ -19,7 +19,7 @@ const initialState = {
         { id: 2, user: "BBBcit", text: "Love it" },
         { id: 3, user: "D3 Dudes", text: "Nice one" },
       ],
-      category: "Campus", // Add a category property
+      postCategory: "Campus",
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ const initialState = {
         { id: 2, user: "BBBcit", text: "Love it" },
         { id: 3, user: "D3 Dudes", text: "Nice one" },
       ],
-      category: "Student Life", // Add a category property
+      postCategory: "Student Life",
     },
     {
       id: 3,
@@ -43,10 +43,10 @@ const initialState = {
         { id: 2, user: "BBBcit", text: "Love it" },
         { id: 3, user: "D3 Dudes", text: "Nice one" },
       ],
-      category: "Study Group", // Add a category property
+      postCategory: "Study Group",
     },
   ],
-  editing: null //will be null or "new" or some product's id
+  postCategory: null
 }
 
 export default function App() {
@@ -61,9 +61,14 @@ export default function App() {
     setSelectedCategory(category);
   };
 
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+  };
+
+
   return (
     <div className="App">
-      <Sidebar />
+      <Sidebar onCategorySelect={handleCategorySelect} />
       <div className="mainContainer">
         <Search />
         <UploadImg handleFile={handleFile} />
