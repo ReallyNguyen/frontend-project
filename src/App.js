@@ -8,6 +8,7 @@ import CreatingPost from "./components/CreatingPost/CreatingPost";
 import { UploadImg } from './components/UploadImg/UploadImg'
 import CategoryDropdown from "./components/ChooseCategory/ChooseCategory";
 import { filter } from "./utils/helpers";
+import Filter from "./components/Filter/Filter";
 
 const initialState = {
   posts: [
@@ -21,11 +22,10 @@ const initialState = {
         { id: 2, user: "BBBcit", text: "Love it" },
         { id: 3, user: "D3 Dudes", text: "Nice one" },
       ],
-
       postCategory: "Campus",
       own: false, // post that created by user
       like: true, // post that liked by user
-
+      days: 3
     },
     {
       id: 2,
@@ -37,8 +37,8 @@ const initialState = {
 
       postCategory: "Student Life",
       own: true, // post that created by user
-      like: false // post that liked by user
-
+      like: false, // post that liked by user
+      days: 5
     },
     {
       id: 3,
@@ -50,8 +50,8 @@ const initialState = {
 
       postCategory: "Study Group",
       own: false, // post that created by user
-      like: true // post that liked by user
-
+      like: true, // post that liked by user
+      days: 4,
     },
   ],
   postCategory: null
@@ -63,6 +63,25 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [ownFilterSelection, setOwnFilterSelection] = useState(false);
   const [likeFilterSelection, setLikeFilterSelection] = useState(false);
+  const [sortBy, setSortBy] = useState("Trending");
+
+  const handleSortChange = (event) => {
+    setSortBy(event.target.value);
+  };
+
+  const getSortedPosts = () => {
+    let sortedPosts = [...filteredState];
+
+    if (sortBy === "New") {
+      sortedPosts.sort((a, b) => b.days - a.days); // Newest to Oldest
+    } else if (sortBy === "Old") {
+      sortedPosts.sort((a, b) => a.days - b.days); // Oldest to Newest
+    } else if (sortBy === "Trending") {
+      sortedPosts.sort((a, b) => a.days - b.days); // idk for trend
+    }
+
+    return sortedPosts;
+  };
 
   const handleFile = (file) => {
     setFileName(file.name);
@@ -83,13 +102,13 @@ export default function App() {
     <div className="App">
       <Sidebar onCategorySelect={handleCategorySelect} />
       <div className="mainContainer">
-        <CategoryDropdown categories={["Campus", "Student Life", "Study Group", "Housing", "Events", "Program", "Career", "Alumni"]} handleCategoryChange={handleCategoryChange} />
         <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
         <UploadImg handleFile={handleFile} />
         {fileName ? <p>Attach Image {fileName}</p> : null}
         <div className="postList">
-          {filteredState
-            .filter((post) => !selectedCategory || post.category === selectedCategory)
+          <Filter onSortChange={handleSortChange} />;
+          {getSortedPosts()
+            .filter((post) => !selectedCategory || post.postCategory === selectedCategory)
             .map((post) => (
               <Post key={post.id} post={post} />
             ))}

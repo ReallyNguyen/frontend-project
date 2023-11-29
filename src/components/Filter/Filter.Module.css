@@ -1,0 +1,14 @@
+.filterContainer {
+    align-self: flex-end;
+    background-color: transparent;
+}
+
+.filterContainer select {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 8px;
+}
