@@ -110,7 +110,7 @@ export default function App() {
       <Sidebar onCategorySelect={handleCategorySelect} />
       <div className="mainContainer">
         <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
-        <CreatingPost onPost={handlePost} />
+        {/*} <CreatingPost onPost={handlePost} />*/}
         <UploadImg handleFile={handleFile} />
         {fileName ? <p>Attach Image {fileName}</p> : null}
         <div className="postList">
