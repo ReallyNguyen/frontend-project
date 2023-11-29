@@ -88,7 +88,6 @@ export default function App() {
         <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
         {/* <UploadImg handleFile={handleFile} />
         {fileName ? <p>Attach Image {fileName}</p> : null} */}
-        {/* <CategoryDropdown categories={["Campus", "Student Life", "Study Group", "Housing", "Events", "Program", "Career", "Alumni"]} handleCategoryChange={handleCategoryChange} /> */}
         <div className="postList">
           {filteredState
             .filter((post) => !selectedCategory || post.category === selectedCategory)
@@ -97,6 +96,8 @@ export default function App() {
             ))}
 
           <OwnPost />
+          <CategoryDropdown categories={["Campus", "Student Life", "Study Group", "Housing", "Events", "Program", "Career", "Alumni"]} handleCategoryChange={handleCategoryChange} />
+
         </div>
       </div>
     </div>
