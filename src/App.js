@@ -110,9 +110,9 @@ export default function App() {
           {getSortedPosts()
             .filter((post) => !selectedCategory || post.postCategory === selectedCategory)
             .map((post) => (
-              <Post key={post.id} post={post} />
+              post.own === true ? <OwnPost key={post.id} post={post} /> : <Post key={post.id} post={post} />
             ))}
-          <OwnPost />
+          {/* <OwnPost /> */}
         </div>
       </div>
     </div>
