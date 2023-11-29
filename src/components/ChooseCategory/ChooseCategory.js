@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../ChooseCategory/ChooseCategory.css";
 
-const CategoryDropdown = ({ categories, handleCategoryChange }) => {
+export default function CategoryDropdown({ categories, handleCategoryChange }) {
     const [selectedCategory, setSelectedCategory] = useState("");
 
     const handleChange = (event) => {
@@ -12,7 +12,11 @@ const CategoryDropdown = ({ categories, handleCategoryChange }) => {
 
     return (
         <div className="category-dropdown">
-            <select value={selectedCategory} onChange={handleChange}>
+            <select
+                className="dropdown-container"
+                value={selectedCategory}
+                onChange={handleChange}
+            >
                 <option value="" disabled>
                     Choose Category
                 </option>
@@ -24,6 +28,4 @@ const CategoryDropdown = ({ categories, handleCategoryChange }) => {
             </select>
         </div>
     );
-};
-
-export default CategoryDropdown;
+}
