@@ -77,7 +77,7 @@ export default function App() {
     } else if (sortBy === "Old") {
       sortedPosts.sort((a, b) => a.days - b.days); // Oldest to Newest
     } else if (sortBy === "Trending") {
-      sortedPosts.sort((a, b) => a.days - b.days); // idk for trend
+      sortedPosts.sort((a, b) => b.number - a.number); // Trendest
     }
 
     return sortedPosts;
