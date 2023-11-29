@@ -1,4 +1,5 @@
 .commentContainer {
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
 }
@@ -6,45 +7,66 @@
 .commentPopup {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    width: 100%;
     height: 350px;
-    border-radius: 5px;
-    border: 1.5px solid #000;
-    background: #F1F1F1;
+    padding: 1rem 2rem 2rem;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.topbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+    width: "100%";
+    /* background-color: red; */
+    padding: 1rem 0;
 }
 
 .commentCardTitle {
+    font-size: 18pt;
+    font-weight: bold;
     display: flex;
-    justify-content: flex-start;
-    margin: 30px;
-    color: #000;
-    font-family: Inter;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.countWord {
+    font-size: 12pt;
+    font-weight: bold;
+    color: #CCC5B9;
+}
+
+.closeButton {
+    background-color: transparent;
+    border: none
 }
 
 .commentInput {
     display: flex;
     justify-content: center;
-    margin-left: 20px;
-    width: 536px;
-    height: 159px;
+    max-width: 100%;
+    height: 10rem;
     color: #000;
     font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    padding: 10px;
+    padding: 1rem;
+    border-radius: 5px;
+    border-style: none;
+    background-color: #EDEDED;
 }
 
 .buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 30px;
+    width: 100%
 }
 
 .wordCount {
@@ -60,19 +82,20 @@
 .postCommentButton {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     border-radius: 5px;
-    background: #FFF;
+    background: #1E555C;
     border: none;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.10);
-    width: 101px;
+    width: 100%;
     height: 41px;
-    color: #000;
+    color: #fff;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin-top: 1rem;
 }
 
 .postImageCommentButton {
@@ -90,4 +113,9 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+.closeButton,
+.postCommentButton:hover {
+    cursor: pointer;
 }

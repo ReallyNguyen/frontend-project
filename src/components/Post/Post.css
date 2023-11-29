@@ -1,20 +1,16 @@
-.container {
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-}
-
 .post {
-    width: 1097px;
+    min-width: 1000px;
     background-color: white;
     display: flex;
-    height: 29rem
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.10);
 }
 
 .leftAndRight {
     display: grid;
-    grid-template-columns: 82px auto;
-    align-items: stretch;
+    grid-template-columns: 5rem auto;
+    flex: 1;
 }
 
 .leftSide {
@@ -23,11 +19,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding: 1.5rem 0.2rem;
+    border-radius: 5px;
 }
 
-.vote img {
-    width: 50px;
-    height: 50px;
+.vote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
 }
 
 .vote h2 {
@@ -35,65 +35,84 @@
     margin: 0;
 }
 
+.leftSide h5 {
+    margin: 0;
+}
+
 .arrowUp {
-    margin-top: 1rem;
     color: #000;
 }
 
 .rightSide {
-    margin-left: 3em;
-}
-
-.rightSide h1 {
-    margin: 0;
-    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1.5rem 2rem;
 }
 
 .header {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .titleAndCategories {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
 }
 
-
 .author {
-    background-color: black;
-    color: white;
-    width: 66px;
-    height: 66px;
+    width: 100%;
+    color: black;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
+    gap: 1rem;
+}
+
+.single_avatar {
+    min-width: 30px;
+    height: 30px;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    background-color: black;
+    margin-top: 5px;
+}
+
+.author h1 {
+    margin: 0;
+    line-height: 1.1;
+    text-align: left;
+    font-size: 28pt;
+    font-weight: 1200;
 }
 
 .mainContent {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 0 1.5rem 0;
+    gap: 8rem;
 }
 
 .postContent {
-    width: 778px;
     text-align: start;
+    margin: 0;
+    font-size: 12pt;
 }
 
 .image {
+    flex: 1;
+    min-width: 120px;
+    max-width: 120px;
+    aspect-ratio: 16/9;
     background-color: #d9d9d9;
-    width: 136px;
-    height: 103px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
 }
 
 .categories {
@@ -103,26 +122,23 @@
 
 .categories p {
     font-weight: bold;
-    margin: 0px;
-    margin-right: 10px;
-    font-size: 13px;
+    font-size: 10pt;
 }
 
 .mainCategories {
     display: flex;
-    background-color: #b1b1b1;
-    width: 73px;
-    height: 25px;
+    background-color: #1E555C;
     border-radius: 50px;
     justify-content: center;
-    border: 3px solid #b1b1b1;
     align-items: center;
+    color: white;
+    height: 1.8rem;
+    padding: 0 1.5rem;
+
 }
 
 .subCategories {
     display: flex;
-    width: 100px;
-    height: 25px;
     border-radius: 50px;
     justify-content: center;
     align-items: center;
@@ -131,15 +147,16 @@
 }
 
 .line {
-    width: 956px;
-    border: 2px solid #a5a5a5;
-    margin: 2rem 0;
+    border: 0.5px solid #D4D4D4;
 }
 
 .likeAndComment {
     display: flex;
     flex-direction: row;
     align-items: center;
+    height: 2rem;
+    padding: 2rem 0rem 1rem 0;
+    gap: 1rem;
 }
 
 .like,
@@ -147,11 +164,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: -7px;
-}
-
-.commentImg {
-    margin-right: 10px;
+    gap: 0.5rem;
 }
 
 .comment {
@@ -163,17 +176,18 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
 
-
+.like:hover,
+.comment:hover {
+    cursor: pointer;
 }
 
 .like {
-    margin-right: 40px;
     display: flex;
     flex-direction: row;
     align-items: center;
     color: #000;
-
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -181,15 +195,24 @@
     line-height: normal;
 }
 
-.like p,
-.comment p {
-    margin-left: 7px;
-}
-
 .userComment {
     display: flex;
     flex-direction: row;
     margin: 0;
+    gap: 30px;
+    margin-top: 1rem;
+}
+
+.commentUsername {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.singleComment {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 }
 
 .commentText {
@@ -199,6 +222,5 @@
 .user {
     font-weight: bold;
     text-align: start;
-    margin-right: 10rem;
     /* Add this line to give the user comment a margin-right */
 }

@@ -26,8 +26,6 @@ const initialState = {
       own: false, // post that created by user
       like: true, // post that liked by user
 
-      postCategory: "Campus",
-
     },
     {
       id: 2,
@@ -35,9 +33,6 @@ const initialState = {
       postContent: "Hey fellow BCIT students! Let's uncover the lesser-known treasures around our campus. Share your favorite study spots, hidden cafeterias, or any unique features of BCIT that not everyone might be aware of. Let's make navigating our campus a little more exciting! – from morning coffee rituals to favorite study spots. It's a chance to showcase the diverse experiences within the BCIT community. Can't wait to see your snapshots!",
       number: 32,
       comments: [
-        { id: 1, user: "Jordan123", text: "yayyy!" },
-        { id: 2, user: "BBBcit", text: "Love it" },
-        { id: 3, user: "D3 Dudes", text: "Nice one" },
       ],
 
       postCategory: "Student Life",
@@ -51,9 +46,6 @@ const initialState = {
       postContent: "Hey BCIT community! Rumor has it that there are potential campus upgrades in the pipeline. What facilities or changes would you love to see on campus? Whether it's more green spaces, tech upgrades, or new study areas, share your wishlist and let's dream up the future of our beloved BCIT campus!",
       number: 28,
       comments: [
-        { id: 1, user: "Jordan123", text: "yayyy!" },
-        { id: 2, user: "BBBcit", text: "Love it" },
-        { id: 3, user: "D3 Dudes", text: "Nice one" },
       ],
 
       postCategory: "Study Group",
@@ -91,16 +83,18 @@ export default function App() {
     <div className="App">
       <Sidebar onCategorySelect={handleCategorySelect} />
       <div className="mainContainer">
-        <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
-        <UploadImg handleFile={handleFile} />
-        {fileName ? <p>Attach Image {fileName}</p> : null}
         <CategoryDropdown categories={["Campus", "Student Life", "Study Group", "Housing", "Events", "Program", "Career", "Alumni"]} handleCategoryChange={handleCategoryChange} />
-        {filteredState
-          .filter((post) => !selectedCategory || post.postCategory === selectedCategory)
-          .map((post) => (
-            <Post key={post.id} post={post} />
-          ))}
-        <OwnPost />
+        <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
+         <UploadImg handleFile={handleFile} />
+        {fileName ? <p>Attach Image {fileName}</p> : null}
+        <div className="postList">
+          {filteredState
+            .filter((post) => !selectedCategory || post.category === selectedCategory)
+            .map((post) => (
+              <Post key={post.id} post={post} />
+            ))}
+          <OwnPost />
+        </div>
       </div>
     </div>
   );
