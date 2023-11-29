@@ -1,8 +1,10 @@
 import React from "react";
 import "./PostBtn.css";
 
-export default function PostBtn() {
+
+export default function PostBtn({ onPost }) {
     const handleClick = () => {
+        onPost();
     };
 
     return (
