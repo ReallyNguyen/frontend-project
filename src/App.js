@@ -85,7 +85,7 @@ export default function App() {
       <div className="mainContainer">
         <CategoryDropdown categories={["Campus", "Student Life", "Study Group", "Housing", "Events", "Program", "Career", "Alumni"]} handleCategoryChange={handleCategoryChange} />
         <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
-         <UploadImg handleFile={handleFile} />
+        <UploadImg handleFile={handleFile} />
         {fileName ? <p>Attach Image {fileName}</p> : null}
         <div className="postList">
           {filteredState
