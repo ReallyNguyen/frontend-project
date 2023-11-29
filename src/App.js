@@ -20,9 +20,13 @@ const initialState = {
         { id: 2, user: "BBBcit", text: "Love it" },
         { id: 3, user: "D3 Dudes", text: "Nice one" },
       ],
-      category: "Campus", // Add a category property,
+
+      postCategory: "Campus",
       own: false, // post that created by user
-      like: false, // post that liked by user
+      like: true, // post that liked by user
+
+      postCategory: "Campus",
+
     },
     {
       id: 2,
@@ -31,9 +35,11 @@ const initialState = {
       number: 32,
       comments: [
       ],
-      category: "Student Life", // Add a category property
+
+      postCategory: "Student Life",
       own: true, // post that created by user
       like: false // post that liked by user
+
     },
     {
       id: 3,
@@ -42,12 +48,14 @@ const initialState = {
       number: 28,
       comments: [
       ],
-      category: "Study Group", // Add a category property
+
+      postCategory: "Study Group",
       own: false, // post that created by user
       like: true // post that liked by user
+
     },
   ],
-  editing: null //will be null or "new" or some product's id
+  postCategory: null
 }
 
 export default function App() {
@@ -65,12 +73,17 @@ export default function App() {
     setSelectedCategory(category);
   };
 
+
   let filteredState = initialState.posts;
   filteredState = filter(filteredState, ownFilterSelection, likeFilterSelection)
 
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+  };
+
   return (
     <div className="App">
-      <Sidebar />
+      <Sidebar onCategorySelect={handleCategorySelect} />
       <div className="mainContainer">
         <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
         {/* <UploadImg handleFile={handleFile} />
