@@ -67,13 +67,10 @@ const initialState = {
 
 export default function App() {
 
-  const [selectedCategory] = useState("");
-
   const [fileName, setFileName] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [ownFilterSelection, setOwnFilterSelection] = useState(false);
   const [likeFilterSelection, setLikeFilterSelection] = useState(false);
-
 
   const handleFile = (file) => {
     setFileName(file.name);
@@ -83,10 +80,8 @@ export default function App() {
     setSelectedCategory(category);
   };
 
-
-
   let filteredState = initialState.posts;
-  filteredState = filter(filteredState, ownFilterSelection, likeFilterSelection)
+  filteredState = filter(filteredState, ownFilterSelection, likeFilterSelection);
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
@@ -96,22 +91,15 @@ export default function App() {
     <div className="App">
       <Sidebar onCategorySelect={handleCategorySelect} />
       <div className="mainContainer">
-
-        <Search />
-        <CreatingPost />
-        {initialState.posts
-
         <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
         <UploadImg handleFile={handleFile} />
         {fileName ? <p>Attach Image {fileName}</p> : null}
         <CategoryDropdown categories={["Campus", "Student Life", "Study Group", "Housing", "Events", "Program", "Career", "Alumni"]} handleCategoryChange={handleCategoryChange} />
         {filteredState
-
-          .filter((post) => !selectedCategory || post.category === selectedCategory)
+          .filter((post) => !selectedCategory || post.postCategory === selectedCategory)
           .map((post) => (
             <Post key={post.id} post={post} />
           ))}
-
         <OwnPost />
       </div>
     </div>
