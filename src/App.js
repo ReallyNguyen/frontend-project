@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './style.css';
 import Search from './components/Search/Search';
 import Post from './components/Post/Post';
@@ -58,7 +58,7 @@ const initialState = {
 }
 
 export default function App() {
-
+  const [posts, setPosts] = useState(initialState.posts);
   const [fileName, setFileName] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [ownFilterSelection, setOwnFilterSelection] = useState(false);
@@ -91,18 +91,26 @@ export default function App() {
     setSelectedCategory(category);
   };
 
-  let filteredState = initialState.posts;
+  let filteredState = posts;
   filteredState = filter(filteredState, ownFilterSelection, likeFilterSelection);
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
   };
+  const handlePost = (newPost) => {
+    setPosts((prevPosts) => [...prevPosts, newPost]);
+  };
+
+  useEffect(() => {
+    console.log('Updated Posts:', posts);
+  }, [posts]);
 
   return (
     <div className="App">
       <Sidebar onCategorySelect={handleCategorySelect} />
       <div className="mainContainer">
         <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
+        <CreatingPost onPost={handlePost} />
         <UploadImg handleFile={handleFile} />
         {fileName ? <p>Attach Image {fileName}</p> : null}
         <div className="postList">
