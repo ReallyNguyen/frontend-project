@@ -7,7 +7,7 @@ export default function OwnPost({ post }) {
     const [comments, setComments] = useState([]);
     const [isVisible, setIsVisible] = useState(true);
     const [isEditMode, setIsEditMode] = useState(false); // State for edit mode
-    const [postContent, setPostContent] = useState("Lorem ipsum dolor sit amet consectetur. Eu pellentesque massa purus volutpat a aliquet facilisi molestie id. Tellus cras interdum blandit scelerisque. Pharetra congue morbi quisque amet mattis netus viverra turpis. Magna lacinia aenean dignissim eu urna consectetur tincidunt pellentesque. Nunc eget senectus sem at metus leo velit eros nibh. Etiam sit in elementum condimentum aliquet. Ac consequat laoreet fermentum nisi at. At viverra morbi euismod urna volutpat aenean vestibulum maecenas mauris. Magnis urna aliquet nunc enim mattis maecenas tristique eu convallis. Est aenean viverra sagittis donec molestie nec. Feugiat metus amet ipsum id consequat phasellus sapien. Sed a augue egestas at. Ipsum sit tempus elit consequat netus. In arcu faucibus sed velit massa. Odio commodo lobortis vestibulum sed mauris"); // Initial post content
+    const [postContent, setPostContent] = useState(post.postContent); // Initial post content
     const [currentColorUp, setCurrentColorUp] = useState("white");
     const [currentColorDown, setCurrentColorDown] = useState("white");
     const [isUpVoted, setIsUpVoted] = useState(false);
@@ -80,10 +80,13 @@ export default function OwnPost({ post }) {
                             </svg>
                             <h2>Vote</h2>
                             <svg className="arrowDown" width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={handleDown}>
+
+                            <h2>{post.number}</h2>
+                            <svg className="arrowDown" width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={handleDown}>
                                 <path d="M28 6.66667L4.00001 6.66667C3.75702 6.66743 3.51884 6.73445 3.3111 6.8605C3.10337 6.98656 2.93395 7.16689 2.82108 7.38207C2.70821 7.59725 2.65616 7.83915 2.67053 8.08171C2.68491 8.32428 2.76517 8.55833 2.90267 8.75867L14.9027 26.092C15.4 26.8107 16.5973 26.8107 17.096 26.092L29.096 8.75867C29.2349 8.55874 29.3164 8.32457 29.3315 8.08161C29.3467 7.83864 29.295 7.59616 29.182 7.38052C29.069 7.16488 28.8991 6.98433 28.6907 6.85847C28.4823 6.73262 28.2434 6.66628 28 6.66667Z" fill={currentColorDown} />
                             </svg>
                         </div>
-                        <h5>Post date</h5>
+                        <h5>{post.days} days ago</h5>
                     </div>
                     <div className="rightSide">
                         <div className="header">
@@ -92,10 +95,10 @@ export default function OwnPost({ post }) {
                                     <div className="single_avatar">
                                         <img className="post_avatar" src="" alt=""></img>
                                     </div>
-                                    <h1>Post Title</h1>
+                                    <h1>{post.title}</h1>
                                 </div>
                                 <div className="categories">
-                                    <p className=" ownYellowColor mainCategories">Category</p>
+                                    <p className=" ownYellowColor mainCategories">{post.postCategory}</p>
                                     {/* <p className="subCategories">Subcategory</p>
                                     <p className="subCategories">Subcategory</p> */}
                                 </div>

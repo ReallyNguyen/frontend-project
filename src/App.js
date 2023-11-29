@@ -73,11 +73,11 @@ export default function App() {
     let sortedPosts = [...filteredState];
 
     if (sortBy === "New") {
-      sortedPosts.sort((a, b) => b.days - a.days); // Newest to Oldest
+      sortedPosts.sort((a, b) => a.days - b.days); // Newest to Oldest
     } else if (sortBy === "Old") {
-      sortedPosts.sort((a, b) => a.days - b.days); // Oldest to Newest
+      sortedPosts.sort((a, b) => b.days - a.days); // Oldest to Newest
     } else if (sortBy === "Trending") {
-      sortedPosts.sort((a, b) => a.days - b.days); // idk for trend
+      sortedPosts.sort((a, b) => b.number - a.number); // Trendest
     }
 
     return sortedPosts;
@@ -118,9 +118,9 @@ export default function App() {
           {getSortedPosts()
             .filter((post) => !selectedCategory || post.postCategory === selectedCategory)
             .map((post) => (
-              <Post key={post.id} post={post} />
+              post.own === true ? <OwnPost key={post.id} post={post} /> : <Post key={post.id} post={post} />
             ))}
-          <OwnPost />
+          {/* <OwnPost /> */}
         </div>
       </div>
     </div>
