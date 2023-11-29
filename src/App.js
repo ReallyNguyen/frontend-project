@@ -4,8 +4,7 @@ import Search from './components/Search/Search';
 import Post from './components/Post/Post';
 import OwnPost from './components/OwnPost/OwnPost'
 import Sidebar from './components/Sidebar/Sidebar'
-import { UploadImg } from './components/UploadImg/UploadImg'
-import CategoryDropdown from "./components/ChooseCategory/ChooseCategory";
+import CreatingPost from "./components/CreatingPost/CreatingPost";
 
 const initialState = {
   posts: [
@@ -50,25 +49,14 @@ const initialState = {
 }
 
 export default function App() {
-  const [fileName, setFileName] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
-
-  const handleFile = (file) => {
-    setFileName(file.name);
-  }
-
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
-  };
+  const [selectedCategory] = useState("");
 
   return (
     <div className="App">
       <Sidebar />
       <div className="mainContainer">
         <Search />
-        <UploadImg handleFile={handleFile} />
-        {fileName ? <p>Attach Image {fileName}</p> : null}
-        <CategoryDropdown categories={["Campus", "Student Life", "Study Group", "Housing", "Events", "Program", "Career", "Alumni"]} handleCategoryChange={handleCategoryChange} />
+        <CreatingPost />
         {initialState.posts
           .filter((post) => !selectedCategory || post.category === selectedCategory)
           .map((post) => (

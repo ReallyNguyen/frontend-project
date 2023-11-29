@@ -1,20 +1,37 @@
-import { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "../UploadImg/UploadImg.css";
 
 export const UploadImg = ({ handleFile }) => {
     const hiddenFileInput = useRef(null);
+    const [imagePreview, setImagePreview] = useState(null);
 
-    const handleClick = (event) => {
+    const handleClick = () => {
         hiddenFileInput.current.click();
     };
 
     const handleChange = (event) => {
         const fileUploaded = event.target.files[0];
         handleFile(fileUploaded);
+
+        const reader = new FileReader();
+        reader.onload = () => {
+            setImagePreview(reader.result);
+        };
+        reader.readAsDataURL(fileUploaded);
     };
 
     return (
         <>
+            <div className="image-preview-container">
+                {imagePreview && (
+                    <img
+                        src={imagePreview}
+                        alt="Uploaded"
+                        className="image-preview"
+                        style={{ objectFit: "contain", width: "136px", height: "103px" }}
+                    />
+                )}
+            </div>
             <button className="button-img-upload" onClick={handleClick}>
                 Attach Image
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
