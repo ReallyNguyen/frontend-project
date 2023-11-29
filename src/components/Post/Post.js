@@ -83,7 +83,7 @@ export default function Post({ post, selectedCategory }) {
                                     <h1>{post.title}</h1>
                                 </div>
                                 <div className="categories">
-                                    <p className="mainCategories">{post.category}</p>
+                                    <p className="mainCategories">{post.postCategory}</p>
                                     {/* <p className="subCategories">Subcategory</p>
                                 <p className="subCategories">Subcategory</p> */}
                                 </div>
