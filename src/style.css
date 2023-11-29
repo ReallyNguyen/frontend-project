@@ -9,4 +9,5 @@
     display: flex;
     flex-direction: row;
     position: relative;
+    gap: 3rem;
 }

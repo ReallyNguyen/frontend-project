@@ -10,7 +10,7 @@
 
 
 .button {
-    background-color: #E0E0E0;
+    background-color: #D4D4D4;
     border: none;
     border-radius: 50px;
     width: 160px;
@@ -21,11 +21,17 @@
     font-weight: 700;
     line-height: normal;
     margin: 10px;
+    color: #000;
+}
+
+.clicked {
+    background-color: #1E555C;
+    color: #fff;
 }
 
 .button:hover {
-    background-color: #000;
-    color: #fff;
+    border: 3px solid #1E555C;
+    cursor: pointer;
 }
 
 .search-container {

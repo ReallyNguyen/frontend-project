@@ -1,19 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './Search.css';
 
-export default function Search() {
+export default function Search({ filterOwn, filterLike }) {
     const [search, setSearch] = useState("");
 
     function handleChange(event) {
         setSearch(event.target.value);
     }
 
+    const [allClick, setAllClick] = useState(true);
+    const [likeClick, setLikeClick] = useState(false);
+    const [ownClick, setOwnClick] = useState(false);
+
     return (
 
         <div className="container">
-            <button className="button">ALL POSTS</button>
-            <button className="button">LIKED POSTS</button>
-            <button className="button">OWN POSTS</button>
+
+            <button className={allClick ? "button clicked" : "button"}
+                onClick={() => [setAllClick(true), setLikeClick(false), setOwnClick(false), filterOwn(false), filterLike(false)]}>All Posts</button>
+            <button className={likeClick ? "button clicked" : "button"}
+                onClick={() => [setAllClick(false), setLikeClick(true), setOwnClick(false), filterOwn(false), filterLike(true)]}>Liked Posts</button>
+            <button className={ownClick ? "button clicked" : "button"}
+                onClick={() => [setAllClick(false), setLikeClick(false), setOwnClick(true), filterOwn(true), filterLike(false)]}>Own Posts</button>
+
             <div className="search-container">
                 <input
                     className="search-input"
