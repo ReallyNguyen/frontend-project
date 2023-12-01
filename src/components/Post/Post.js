@@ -9,6 +9,9 @@ export default function Post({ post, selectedCategory, date }) {
     const [currentColorDown, setCurrentColorDown] = useState("white");
     const [isUpVoted, setIsUpVoted] = useState(false);
     const [isDownVoted, setIsDownVoted] = useState(false);
+    const [liked, setLiked] = useState(false);
+    const [likedPosts, setLikedPosts] = useState([]);
+
 
     const handleUp = () => {
         if (!isUpVoted) {
@@ -62,6 +65,33 @@ export default function Post({ post, selectedCategory, date }) {
     console.log('Post:', post);
     console.log('Should Display:', shouldDisplay);
 
+    const handleLike = () => {
+        setLiked((prevLiked) => !prevLiked);
+        if (liked) {
+            undoLikePost();
+            setLikedPosts((prevLikedPosts) =>
+                prevLikedPosts.filter((postId) => postId !== post.id)
+            );
+        } else {
+            storeLikedPost();
+            setLikedPosts((prevLikedPosts) => [...prevLikedPosts, post.id]);
+        }
+    };
+
+    const storeLikedPost = () => {
+        console.log('Liked post stored on the server');
+    };
+
+    const undoLikePost = () => {
+
+        console.log('Liked post undone on the server');
+
+
+    };
+
+    const heartIcon = liked ? '/post/heart-filled.svg' : '/post/heart.svg';
+
+
     return shouldDisplay ? (
         <div>
             <div className="post">
@@ -101,12 +131,9 @@ export default function Post({ post, selectedCategory, date }) {
                         </div>
                         <div className="line"></div>
                         <div className="likeAndComment">
-                            <div className="like">
-                                <img
-                                    src="/post/heart.svg"
-                                    alt="down"
-                                />
-                                <p>Like</p>
+                            <div className="like" >
+                                <img src={heartIcon} alt="down" onClick={handleLike} />
+                                <p onClick={handleLike}>{liked ? 'Liked!' : 'Like'} </p>
                             </div>
                             <div className='buttons'>
                                 <button className='comment' onClick={handleCommentClick}>
@@ -133,12 +160,14 @@ export default function Post({ post, selectedCategory, date }) {
 
                 </div>
             </div>
-            {showComment && (
-                <Comment
-                    onPostComment={addComment}
-                    onClose={handleCloseComment}
-                />
-            )}
-        </div>
+            {
+                showComment && (
+                    <Comment
+                        onPostComment={addComment}
+                        onClose={handleCloseComment}
+                    />
+                )
+            }
+        </div >
     ) : null
 }

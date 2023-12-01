@@ -112,7 +112,7 @@ export default function App() {
         <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
         <CreatingPost className="createPost" onPost={handlePost} />
         <div className="postList">
-          <Filter onSortChange={handleSortChange} />;
+          <Filter onSortChange={handleSortChange} />
           {getSortedPosts()
             .filter((post) => !selectedCategory || post.postCategory === selectedCategory)
             .map((post) => (

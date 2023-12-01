@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import './Search.css';
 
-export default function Search({ filterOwn, filterLike }) {
+export default function Search({ filterOwn, filterLike, likedPosts }) {
     const [search, setSearch] = useState("");
 
     function handleChange(event) {
@@ -12,17 +12,52 @@ export default function Search({ filterOwn, filterLike }) {
     const [likeClick, setLikeClick] = useState(false);
     const [ownClick, setOwnClick] = useState(false);
 
+    const handleShowLikedPosts = () => {
+        <span>{likedPosts}</span>
+
+    };
     return (
 
         <div className="search_container">
             <div className="button-container">
-                <button className={allClick ? "button clicked" : "button"}
-                    onClick={() => [setAllClick(true), setLikeClick(false), setOwnClick(false), filterOwn(false), filterLike(false)]}>All Posts</button>
-                <button className={likeClick ? "button clicked" : "button"}
-                    onClick={() => [setAllClick(false), setLikeClick(true), setOwnClick(false), filterOwn(false), filterLike(true)]}>Liked Posts</button>
-                <button className={ownClick ? "button clicked" : "button"}
-                    onClick={() => [setAllClick(false), setLikeClick(false), setOwnClick(true), filterOwn(true), filterLike(false)]}>Own Posts</button>
-
+                <button
+                    className={allClick ? "button clicked" : "button"}
+                    onClick={() => {
+                        setAllClick(true);
+                        setLikeClick(false);
+                        setOwnClick(false);
+                        filterOwn(false);
+                        filterLike(false);
+                    }}
+                >
+                    All Posts
+                </button>
+                <button
+                    className={likeClick ? "button clicked" : "button"}
+                    onClick={() => {
+                        setAllClick(false);
+                        setLikeClick(true);
+                        handleShowLikedPosts(true);
+                        setOwnClick(false);
+                        filterOwn(false);
+                        filterLike(true);
+                    }}
+                >
+                    Liked Posts
+                </button>
+                <button
+                    className={ownClick ? "button clicked" : "button"}
+                    onClick={() => {
+                        setAllClick(false);
+                        setLikeClick(false);
+                        handleShowLikedPosts(true)
+                        setOwnClick(true);
+                        filterOwn(true);
+                        filterLike(false);
+                    }}
+                >
+                    Own Posts
+                </button>
                 <div className="search-container">
                     <input
                         className="search-input"
