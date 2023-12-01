@@ -103,7 +103,7 @@
     font-size: 12pt;
 }
 
-.image {
+.image img {
     flex: 1;
     min-width: 120px;
     max-width: 120px;
