@@ -169,12 +169,4 @@ export default function Post({ post, selectedCategory, date }) {
         </div >
     ) : null
 
-            {showComment && (
-                <Comment
-                    onPostComment={addComment}
-                    onClose={handleCloseComment}
-                />
-            )}
-        </div>
-    ) : null;
 }
