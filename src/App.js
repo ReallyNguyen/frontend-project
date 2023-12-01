@@ -5,8 +5,6 @@ import Post from './components/Post/Post';
 import OwnPost from './components/OwnPost/OwnPost'
 import Sidebar from './components/Sidebar/Sidebar'
 import CreatingPost from "./components/CreatingPost/CreatingPost";
-import { UploadImg } from './components/UploadImg/UploadImg'
-import CategoryDropdown from "./components/ChooseCategory/ChooseCategory";
 import { filter } from "./utils/helpers";
 import Filter from "./components/Filter/Filter";
 
@@ -112,7 +110,7 @@ export default function App() {
         <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
         <CreatingPost className="createPost" onPost={handlePost} />
         <div className="postList">
-          <Filter onSortChange={handleSortChange} />;
+          <Filter onSortChange={handleSortChange} />
           {getSortedPosts()
             .filter((post) => !selectedCategory || post.postCategory === selectedCategory)
             .map((post) => (
