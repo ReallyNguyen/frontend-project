@@ -10,6 +10,12 @@ export default function Sidebar({ onCategorySelect }) {
         setSelectedCategory(category);
         onCategorySelect(category);
     };
+
+    const handleClearFilter = () => {
+        setSelectedCategory(null);
+        onCategorySelect(null); // Notify parent component that the filter is cleared
+    };
+
     return (
         <div className="sidebar">
             <div className="sideHeader">
@@ -17,52 +23,16 @@ export default function Sidebar({ onCategorySelect }) {
                 <img className="profile" src={profile} alt="" />
             </div>
             <div className="sideCategory">
-                <div
-                    className={`category ${selectedCategory === 'Campus' ? 'select' : ''}`}
-                    onClick={() => handleCategoryClick('Campus')}
-                >
-                    Campus                </div>
-                <div
-                    className={`category ${selectedCategory === 'Student Life' ? 'select' : ''}`}
-                    onClick={() => handleCategoryClick('Student Life')}
-                >
-                    Student Life
-                </div>
-                <div
-                    className={`category ${selectedCategory === 'Study Group' ? 'select' : ''}`}
-                    onClick={() => handleCategoryClick('Study Group')}
-                >
-                    Study Group                </div>
-                <div
-                    className={`category ${selectedCategory === 'Housing' ? 'select' : ''}`}
-                    onClick={() => handleCategoryClick('Housing')}
-                >
-                    Housing
-                </div>
-                <div
-                    className={`category ${selectedCategory === 'Events' ? 'select' : ''}`}
-                    onClick={() => handleCategoryClick('Events')}
-                >
-                    Events
-                </div>
-                <div
-                    className={`category ${selectedCategory === 'Program' ? 'select' : ''}`}
-                    onClick={() => handleCategoryClick('Program')}
-                >
-                    Program
-                </div>
-                <div
-                    className={`category ${selectedCategory === 'Career' ? 'select' : ''}`}
-                    onClick={() => handleCategoryClick('Career')}
-                >
-                    Career
-                </div>
-                <div
-                    className={`category ${selectedCategory === 'Alumni' ? 'select' : ''}`}
-                    onClick={() => handleCategoryClick('Alumni')}
-                >
-                    Almuni
-                </div>
+                {['Campus', 'Student Life', 'Study Group', 'Housing', 'Events', 'Program', 'Career', 'Alumni'].map(category => (
+                    <div key={category} className={`category ${selectedCategory === category ? 'select' : ''}`}>
+                        <span onClick={() => handleCategoryClick(category)}>{category}</span>
+                        {selectedCategory === category && (
+                            <button className="closeButton" onClick={handleClearFilter}>
+                                X
+                            </button>
+                        )}
+                    </div>
+                ))}
             </div>
         </div>
     );
