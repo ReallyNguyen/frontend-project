@@ -69,3 +69,11 @@
     color: white;
     font-weight: 600;
 }
+
+.closeButton {
+    margin-left: 6rem;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 100;
+}

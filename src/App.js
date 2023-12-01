@@ -110,9 +110,7 @@ export default function App() {
       <Sidebar onCategorySelect={handleCategorySelect} />
       <div className="mainContainer">
         <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
-        {/*} <CreatingPost onPost={handlePost} />*/}
-        <UploadImg handleFile={handleFile} />
-        {fileName ? <p>Attach Image {fileName}</p> : null}
+        <CreatingPost className="createPost" onPost={handlePost} />
         <div className="postList">
           <Filter onSortChange={handleSortChange} />;
           {getSortedPosts()
