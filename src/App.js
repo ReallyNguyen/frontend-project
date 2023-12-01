@@ -5,8 +5,6 @@ import Post from './components/Post/Post';
 import OwnPost from './components/OwnPost/OwnPost'
 import Sidebar from './components/Sidebar/Sidebar'
 import CreatingPost from "./components/CreatingPost/CreatingPost";
-import { UploadImg } from './components/UploadImg/UploadImg'
-import CategoryDropdown from "./components/ChooseCategory/ChooseCategory";
 import { filter } from "./utils/helpers";
 import Filter from "./components/Filter/Filter";
 

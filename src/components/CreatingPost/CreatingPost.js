@@ -8,6 +8,7 @@ export default function CreatingPost({ onPost }) {
     const [title, setTitle] = useState("");
     const [postType, setPostType] = useState("");
     const [fileName, setFileName] = useState("");
+    const [uploadedImage, setUploadedImage] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState("");
     const [error, setError] = useState("");
     const [isContainerOpen, setIsContainerOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function CreatingPost({ onPost }) {
 
     const handleFile = (file) => {
         setFileName(file.name);
+        setUploadedImage(URL.createObjectURL(file));
     };
 
     const handleCategoryChange = (category) => {
@@ -29,29 +31,34 @@ export default function CreatingPost({ onPost }) {
     };
 
     const handlePost = () => {
-
         if (!title || !selectedCategory) {
             setError("Please fill in the required fields.");
             return;
         }
 
-        const newPost = {
+        const now = new Date();
+        const formattedDate = `${now.getDate()}`;
+        const number = 0;
+
+        const postObject = {
             title,
-            postType,
-            fileName,
-            selectedCategory,
+            postCategory: selectedCategory,
+            postContent: postType,
+            days: formattedDate,
+            number,
+            comments: [],
+            uploadedImage,
         };
 
         try {
-
-            onPost(newPost);
-
-
+            console.log("Post Data:", postObject);
+            onPost(postObject);
             setTitle("");
             setPostType("");
             setFileName("");
+            setUploadedImage(null);
             setSelectedCategory("");
-            setError(""); // Clear any previous errors
+            setError("");
         } catch (error) {
             setError("An error occurred while posting. Please try again.");
         }
@@ -62,14 +69,11 @@ export default function CreatingPost({ onPost }) {
     };
 
     return (
-
-
         <div className="container">
             {!isContainerOpen && (
                 <button className="toggleButton" onClick={handleToggleContainer}>
                     Post your Thoughts
                 </button>
-
             )}
             {isContainerOpen && (
                 <div className="postBox">
@@ -116,23 +120,22 @@ export default function CreatingPost({ onPost }) {
                     )}
                     {isContainerOpen && (
                         <div className="bottomSection">
-                            <UploadImg handleFile={handleFile} className="uploaded-image" />
-                            {fileName ? (
-                                <p style={{
-                                    position: 'absolute',
-                                    top: 115,
-                                    right: 0,
-                                    margin: '15px',
-                                }}>
-                                    Attached Image: {fileName}
-                                </p>
-                            ) : null}
+                            <div>
+                                <UploadImg handleFile={handleFile} />
+                                {uploadedImage && (
+                                    <div className="image-preview-container">
+                                        <img className="image-preview" src={uploadedImage} alt="Uploaded" />
+                                        <p className="image-title">
+                                            Attached Image: {fileName}
+                                        </p>
+                                    </div>
+                                )}
+                            </div>
                             <CategoryDropdown categories={["Campus", "Student Life", "Study Group", "Housing", "Events", "Program", "Career", "Alumni"]} handleCategoryChange={handleCategoryChange} />
                             {error && <p style={{ color: "red" }}>{error}</p>}
                             <div className="post-btn">
                                 <PostBtn onPost={handlePost} />
                             </div>
-
                         </div>
                     )}
                 </div>
