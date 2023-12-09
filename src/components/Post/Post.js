@@ -78,20 +78,6 @@ export default function OwnPost({ post }) {
         }
     };
 
-    const handleDeleteClick = () => {
-        setIsVisible(false);
-        console.log("Post deleted!");
-    };
-
-    const handleEditClick = () => {
-        setIsEditMode(true);
-    };
-
-    const handleSaveClick = () => {
-        setIsEditMode(false);
-        console.log("Post edited:", postContent);
-    };
-
     if (!isVisible) {
         return null;
     }
