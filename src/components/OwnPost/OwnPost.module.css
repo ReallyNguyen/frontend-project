@@ -1,3 +1,26 @@
+.ownYellowColor {
+    background-color: #A08351;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-radius: 7px;
+}
+
+.delete,
+.edit {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+}
+
+.editContent {
+    min-width: 75%;
+    min-height: 150px;
+    flex: 1
+}
+
 .post {
     min-width: 1000px;
     background-color: white;
@@ -5,6 +28,11 @@
     border-radius: 5px;
     background: #FFF;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.10);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
 }
 
 .leftAndRight {
@@ -28,6 +56,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0.5em;
+    margin-top: 10px;
 }
 
 .vote h2 {
@@ -69,7 +98,6 @@
     width: 100%;
     color: black;
     display: flex;
-    gap: 1rem;
 }
 
 .single_avatar {

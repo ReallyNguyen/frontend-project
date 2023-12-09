@@ -26,11 +26,11 @@
 }
 
 .commentCardTitle {
-    font-size: 18pt;
+    font-size: 18px;
     font-weight: bold;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
     gap: 1rem;
 }
 
