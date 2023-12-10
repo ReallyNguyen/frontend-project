@@ -41,7 +41,6 @@
 }
 
 .button:hover {
-    /* border: 3px solid #1E555C; */
     cursor: pointer;
     transform: scale(1.05);
 }
@@ -82,3 +81,4 @@
     width: 30px;
     height: 30px;
 }
+

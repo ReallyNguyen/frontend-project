@@ -62,6 +62,11 @@ export default function App() {
   const [ownFilterSelection, setOwnFilterSelection] = useState(false);
   const [likeFilterSelection, setLikeFilterSelection] = useState(false);
   const [sortBy, setSortBy] = useState("Trending");
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
 
   const handleSortChange = (event) => {
     setSortBy(event.target.value);
@@ -75,7 +80,7 @@ export default function App() {
     } else if (sortBy === "Old") {
       sortedPosts.sort((a, b) => b.days - a.days); // Oldest to Newest
     } else if (sortBy === "Trending") {
-      sortedPosts.sort((a, b) => b.number - a.number); // Trendest
+      sortedPosts.sort((a, b) => b.number - a.number); // Trending
     }
 
     return sortedPosts;
@@ -83,18 +88,20 @@ export default function App() {
 
   const handleFile = (file) => {
     setFileName(file.name);
-  }
+  };
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
   };
 
   let filteredState = posts;
+
   filteredState = filter(filteredState, ownFilterSelection, likeFilterSelection);
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
   };
+
   const handlePost = (newPost) => {
     setPosts((prevPosts) => [...prevPosts, newPost]);
   };
@@ -107,16 +114,26 @@ export default function App() {
     <div className="App">
       <Sidebar onCategorySelect={handleCategorySelect} />
       <div className="mainContainer">
-        <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
+        <Search
+          filterOwn={setOwnFilterSelection}
+          filterLike={setLikeFilterSelection}
+          onSearch={handleSearch}
+        />
         <CreatingPost className="createPost" onPost={handlePost} />
         <div className="postList">
           <Filter onSortChange={handleSortChange} />
           {getSortedPosts()
-            .filter((post) => !selectedCategory || post.postCategory === selectedCategory)
+            .filter((post) => (
+              (!selectedCategory || post.postCategory === selectedCategory) &&
+              (!searchTerm ||
+                post.title.toLowerCase().includes(searchTerm.toLowerCase())
+              ) &&
+              !(ownFilterSelection && !post.own) &&
+              !(likeFilterSelection && !post.like)
+            ))
             .map((post) => (
-              post.own === true ? <OwnPost key={post.id} post={post} /> : <Post key={post.id} post={post} />
+              post.own ? <OwnPost key={post.id} post={post} /> : <Post key={post.id} post={post} />
             ))}
-          {/* <OwnPost /> */}
         </div>
       </div>
     </div>
