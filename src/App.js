@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './style.css';
 import Search from './components/Search/Search';
 import Post from './components/Post/Post';
 import OwnPost from './components/OwnPost/OwnPost'
 import Sidebar from './components/Sidebar/Sidebar'
 import CreatingPost from "./components/CreatingPost/CreatingPost";
-import { UploadImg } from './components/UploadImg/UploadImg'
-import CategoryDropdown from "./components/ChooseCategory/ChooseCategory";
 import { filter } from "./utils/helpers";
 import Filter from "./components/Filter/Filter";
 
@@ -58,12 +56,17 @@ const initialState = {
 }
 
 export default function App() {
-
+  const [posts, setPosts] = useState(initialState.posts);
   const [fileName, setFileName] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [ownFilterSelection, setOwnFilterSelection] = useState(false);
   const [likeFilterSelection, setLikeFilterSelection] = useState(false);
   const [sortBy, setSortBy] = useState("Trending");
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
 
   const handleSortChange = (event) => {
     setSortBy(event.target.value);
@@ -73,11 +76,11 @@ export default function App() {
     let sortedPosts = [...filteredState];
 
     if (sortBy === "New") {
-      sortedPosts.sort((a, b) => b.days - a.days); // Newest to Oldest
+      sortedPosts.sort((a, b) => a.days - b.days); // Newest to Oldest
     } else if (sortBy === "Old") {
-      sortedPosts.sort((a, b) => a.days - b.days); // Oldest to Newest
+      sortedPosts.sort((a, b) => b.days - a.days); // Oldest to Newest
     } else if (sortBy === "Trending") {
-      sortedPosts.sort((a, b) => b.number - a.number); // Trendest
+      sortedPosts.sort((a, b) => b.number - a.number); // Trending
     }
 
     return sortedPosts;
@@ -85,34 +88,52 @@ export default function App() {
 
   const handleFile = (file) => {
     setFileName(file.name);
-  }
+  };
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
   };
 
-  let filteredState = initialState.posts;
+  let filteredState = posts;
+
   filteredState = filter(filteredState, ownFilterSelection, likeFilterSelection);
 
   const handleCategorySelect = (category) => {
     setSelectedCategory(category);
   };
 
+  const handlePost = (newPost) => {
+    setPosts((prevPosts) => [...prevPosts, newPost]);
+  };
+
+  useEffect(() => {
+    console.log('Updated Posts:', posts);
+  }, [posts]);
+
   return (
     <div className="App">
       <Sidebar onCategorySelect={handleCategorySelect} />
       <div className="mainContainer">
-        <Search filterOwn={setOwnFilterSelection} filterLike={setLikeFilterSelection} />
-        <UploadImg handleFile={handleFile} />
-        {fileName ? <p>Attach Image {fileName}</p> : null}
+        <Search
+          filterOwn={setOwnFilterSelection}
+          filterLike={setLikeFilterSelection}
+          onSearch={handleSearch}
+        />
+        <CreatingPost className="createPost" onPost={handlePost} />
         <div className="postList">
-          <Filter onSortChange={handleSortChange} />;
+          <Filter onSortChange={handleSortChange} />
           {getSortedPosts()
-            .filter((post) => !selectedCategory || post.postCategory === selectedCategory)
+            .filter((post) => (
+              (!selectedCategory || post.postCategory === selectedCategory) &&
+              (!searchTerm ||
+                post.title.toLowerCase().includes(searchTerm.toLowerCase())
+              ) &&
+              !(ownFilterSelection && !post.own) &&
+              !(likeFilterSelection && !post.like)
+            ))
             .map((post) => (
-              post.own === true ? <OwnPost key={post.id} post={post} /> : <Post key={post.id} post={post} />
+              post.own ? <OwnPost key={post.id} post={post} /> : <Post key={post.id} post={post} />
             ))}
-          {/* <OwnPost /> */}
         </div>
       </div>
     </div>
