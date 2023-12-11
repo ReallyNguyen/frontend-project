@@ -13,7 +13,8 @@ export const initialState = {
             postCategory: "Campus",
             own: false, // post that created by user
             like: true, // post that liked by user
-            days: 3
+            days: 3,
+            link: "https://images.unsplash.com/photo-1575435349939-0ffbdad70905?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 2,
@@ -22,11 +23,11 @@ export const initialState = {
             number: 32,
             comments: [
             ],
-
             postCategory: "Student Life",
             own: true, // post that created by user
             like: false, // post that liked by user
-            days: 5
+            days: 5,
+            link: "https://images.unsplash.com/photo-1600431521340-491eca880813?q=80&w=2969&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 3,
@@ -39,6 +40,7 @@ export const initialState = {
             own: false, // post that created by user
             like: true, // post that liked by user
             days: 4,
+            link: "https://images.unsplash.com/photo-1529148482759-b35b25c5f217?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 4,
@@ -53,6 +55,7 @@ export const initialState = {
             own: false,
             like: true,
             days: 2,
+            link: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=2763&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 5,
@@ -67,6 +70,7 @@ export const initialState = {
             own: true,
             like: false,
             days: 7,
+            link: "https://images.unsplash.com/photo-1603573355706-3f15d98cf100?q=80&w=3129&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 6,
@@ -81,6 +85,7 @@ export const initialState = {
             own: false,
             like: true,
             days: 5,
+            link: "https://images.unsplash.com/photo-1511044568932-338cba0ad803?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 7,
@@ -95,6 +100,7 @@ export const initialState = {
             own: false,
             like: true,
             days: 6,
+            link: "https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 8,
@@ -109,6 +115,7 @@ export const initialState = {
             own: false,
             like: false,
             days: 3,
+            link: "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 9,
@@ -123,6 +130,7 @@ export const initialState = {
             own: false,
             like: true,
             days: 8,
+            link: "https://images.unsplash.com/photo-1572566201797-81b5e325dd6c?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 10,
@@ -137,6 +145,7 @@ export const initialState = {
             own: false,
             like: false,
             days: 5,
+            link: "https://images.unsplash.com/photo-1649077991904-14a698bd68c8?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 11,
@@ -151,6 +160,7 @@ export const initialState = {
             own: true,
             like: false,
             days: 6,
+            link: "https://images.unsplash.com/photo-1657299156653-d3c0147ba3ee?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 12,
@@ -165,6 +175,7 @@ export const initialState = {
             own: false,
             like: true,
             days: 4,
+            link: "https://images.unsplash.com/photo-1657299143333-4a56a5519651?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 13,
@@ -179,6 +190,7 @@ export const initialState = {
             own: false,
             like: true,
             days: 2,
+            link: "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 14,
@@ -193,6 +205,7 @@ export const initialState = {
             own: false,
             like: false,
             days: 7,
+            link: "https://images.unsplash.com/photo-1681332192887-1b769feea59a?q=80&w=2966&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 15,
@@ -207,6 +220,7 @@ export const initialState = {
             own: false,
             like: true,
             days: 5,
+            link: "https://images.unsplash.com/photo-1699987322888-866a741458da?q=80&w=2980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 16,
@@ -221,6 +235,7 @@ export const initialState = {
             own: false,
             like: false,
             days: 8,
+            link: "https://images.unsplash.com/photo-1701449098364-b5c6cc3e768c?q=80&w=2975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 17,
@@ -235,6 +250,7 @@ export const initialState = {
             own: false,
             like: true,
             days: 3,
+            link: "https://images.unsplash.com/photo-1678067573245-61d258c7bba8?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 18,
@@ -249,6 +265,7 @@ export const initialState = {
             own: true,
             like: true,
             days: 6,
+            link: "https://images.unsplash.com/photo-1681716455523-f6c10c3c17d3?q=80&w=2975&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 19,
@@ -263,6 +280,7 @@ export const initialState = {
             own: false,
             like: true,
             days: 9,
+            link: "https://images.unsplash.com/photo-1701369290924-475bd6169621?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 20,
@@ -277,6 +295,7 @@ export const initialState = {
             own: true,
             like: true,
             days: 4,
+            link: "https://images.unsplash.com/photo-1701743805124-dde90e4df301?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyM3x8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 21,
@@ -291,6 +310,7 @@ export const initialState = {
             own: false,
             like: false,
             days: 6,
+            link: "https://images.unsplash.com/photo-1702182910051-2481e0a486fa?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 22,
@@ -305,6 +325,7 @@ export const initialState = {
             own: false,
             like: true,
             days: 7,
+            link: "https://images.unsplash.com/photo-1701921188889-06d89afcbb5b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMDR8fHxlbnwwfHx8fHw%3D"
         },
         {
             id: 23,
@@ -319,6 +340,7 @@ export const initialState = {
             own: true,
             like: false,
             days: 5,
+            link: "https://images.unsplash.com/photo-1701209770647-b7e4e25112ee?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2NXx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 24,
@@ -333,6 +355,7 @@ export const initialState = {
             own: false,
             like: true,
             days: 9,
+            link: "https://images.unsplash.com/photo-1701893852514-e079530f6bb8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2MHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
             id: 25,
@@ -347,6 +370,7 @@ export const initialState = {
             own: false,
             like: false,
             days: 6,
+            link: "https://images.unsplash.com/photo-1701799460352-b5c59d5d622e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMzR8fHxlbnwwfHx8fHw%3D"
         },
         {
             id: 26,
@@ -361,6 +385,7 @@ export const initialState = {
             own: false,
             like: true,
             days: 4,
+            link: "https://images.unsplash.com/photo-1701696602374-7cb01810a90f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMTh8fHxlbnwwfHx8fHw%3D"
         },
         {
             id: 27,
@@ -375,9 +400,10 @@ export const initialState = {
             own: true,
             like: true,
             days: 5,
+            link: "https://images.unsplash.com/photo-1701860943611-9f7cd8b13ebc?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMjJ8fHxlbnwwfHx8fHw%3D"
         },
         {
-            id: 29,
+            id: 28,
             title: "BCIT Coding Bootcamp Alumni Success Stories",
             postContent: "Are you a graduate of the BCIT Coding Bootcamp? Share your success story and insights into the world of coding. Whether you've landed a dream job, started your own project, or have valuable advice to offer, let's inspire aspiring coders in the BCIT community!",
             number: 55,
@@ -389,9 +415,10 @@ export const initialState = {
             own: false,
             like: true,
             days: 8,
+            link: "https://images.unsplash.com/photo-1701433507837-563082c84e7e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMzh8fHxlbnwwfHx8fHw%3D"
         },
         {
-            id: 30,
+            id: 29,
             title: "BCIT DIY Workshop: Craft and Create",
             postContent: "Host a DIY workshop at BCIT! Share your crafting skills, host virtual sessions, or suggest creative projects for the community. Let's come together to explore different crafts and unleash our creativity. What DIY projects are you excited to try?",
             number: 25,
@@ -403,6 +430,7 @@ export const initialState = {
             own: false,
             like: false,
             days: 6,
+            link: "https://images.unsplash.com/photo-1687235446378-cd998fdd1278?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzMDd8fHxlbnwwfHx8fHw%3D"
         },
         {
             id: 31,
@@ -417,9 +445,10 @@ export const initialState = {
             own: true,
             like: true,
             days: 5,
+            link: "https://images.unsplash.com/photo-1701651541625-e8fa78fa741d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNDV8fHxlbnwwfHx8fHw%3D"
         },
         {
-            id: 32,
+            id: 30,
             title: "BCIT Music Lovers: Share Your Playlist",
             postContent: "Are you passionate about music? Share your favorite playlists, recommend new tracks, or discuss music genres. Let's create a diverse musical community at BCIT and discover the soundtracks that inspire us!",
             number: 18,
@@ -431,9 +460,10 @@ export const initialState = {
             own: false,
             like: false,
             days: 7,
+            link: "https://images.unsplash.com/photo-1701453031893-7ba3879de2c4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNTB8fHxlbnwwfHx8fHw%3D"
         },
         {
-            id: 33,
+            id: 31,
             title: "BCIT Fitness Challenge: Week 2 Updates",
             postContent: "How's everyone doing in the BCIT Fitness Challenge? Share your progress, achievements, or challenges you've faced. Let's motivate and support each other on our fitness journeys. Remember, every step counts!",
             number: 60,
@@ -445,9 +475,10 @@ export const initialState = {
             own: false,
             like: true,
             days: 9,
+            link: "https://images.unsplash.com/photo-1701602714058-0d1403f606fd?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MDh8fHxlbnwwfHx8fHw%3D"
         },
         {
-            id: 34,
+            id: 32,
             title: "BCIT Environmental Science Symposium",
             postContent: "Engage in discussions about environmental science at BCIT. Share research findings, discuss sustainability projects, or propose initiatives to promote eco-friendly practices on campus. Let's work together for a greener future!",
             number: 32,
@@ -459,9 +490,10 @@ export const initialState = {
             own: true,
             like: false,
             days: 6,
+            link: "https://images.unsplash.com/photo-1701453031915-60f4fc287f4d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0ODJ8fHxlbnwwfHx8fHw%3D"
         },
         {
-            id: 35,
+            id: 33,
             title: "BCIT Chess Club: Friendly Matches",
             postContent: "Join the BCIT Chess Club for friendly matches and chess discussions. Whether you're a beginner or a seasoned player, everyone is welcome! Share your chess strategies, coordinate matches, and let's build a vibrant chess community at BCIT.",
             number: 28,
@@ -473,6 +505,7 @@ export const initialState = {
             own: false,
             like: true,
             days: 4,
+            link: "https://images.unsplash.com/photo-1700804217487-55137a47a82f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0ODV8fHxlbnwwfHx8fHw%3D"
         },
     ],
     postCategory: null
