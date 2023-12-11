@@ -117,7 +117,7 @@ export default function CreatingPost({ onPost }) {
                                     lineHeight: "normal",
                                     resize: "both",
                                     overflow: "auto",
-                                    width: "100%",
+                                    width: "80%",
                                     minHeight: "5rem",
                                     // maxWidth: "60rem"
                                 }}
