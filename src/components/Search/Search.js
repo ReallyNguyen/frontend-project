@@ -64,7 +64,7 @@ export default function Search({ filterOwn, filterLike, onSearch }) {
                 >
                     Own Posts
                 </button>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="searchbigcontainer">
                     <div className="search-container">
                         <input
                             className="search-input"

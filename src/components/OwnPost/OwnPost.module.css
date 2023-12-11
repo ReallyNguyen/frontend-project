@@ -64,6 +64,10 @@
     margin: 0;
 }
 
+.white {
+    color: white;
+}
+
 .leftSide h5 {
     margin: 0;
 }
@@ -92,6 +96,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    color: white;
 }
 
 .author {
@@ -129,6 +134,7 @@
     text-align: start;
     margin: 0;
     font-size: 12pt;
+    flex: 1;
 }
 
 .image img {
@@ -226,9 +232,9 @@
 .userComment {
     display: flex;
     flex-direction: row;
-    margin: 0;
-    gap: 30px;
+    justify-content: flex-start;
     margin-top: 1rem;
+    padding: 0;
 }
 
 .commentUsername {

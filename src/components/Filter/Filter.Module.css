@@ -12,3 +12,7 @@
     font-weight: bold;
     padding-right: 8px;
 }
+
+.filterText {
+    text-align: right;
+}

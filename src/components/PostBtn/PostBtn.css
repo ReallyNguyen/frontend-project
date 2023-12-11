@@ -1,4 +1,4 @@
-.post-upload{
+.post-upload {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -7,7 +7,7 @@
     font-weight: bold;
     gap: 10px;
     font-size: 16px;
-    border:0 ;
+    border: 0;
     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.10);
     border-radius: 0.3125rem;
     color: white;
