@@ -142,11 +142,11 @@
     min-width: 120px;
     max-width: 120px;
     aspect-ratio: 16/9;
-    background-color: #d9d9d9;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    object-fit:cover;
 }
 
 .categories {
