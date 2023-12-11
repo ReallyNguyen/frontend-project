@@ -1,5 +1,5 @@
-.post {
-    min-width: 1000px;
+.postTwo {
+    /* min-width: 1000px; */
     background-color: white;
     display: flex;
     border-radius: 5px;
@@ -223,7 +223,7 @@
 .singleComment {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .user {
@@ -234,7 +234,7 @@
 
 .commentText {
     text-align: start;
-    margin-left: 40px;
+    /* margin-left: 40px; */
     align-items: flex-start;
 }
 
@@ -266,4 +266,24 @@
     display: flex;
     flex-direction: row;
     gap: 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .postTwo {
+        min-width: 300px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .mainContent {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .author h1 {
+        font-size: calc(8pt + 3vw);
+    }
+
 }

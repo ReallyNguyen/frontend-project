@@ -258,3 +258,24 @@
     text-align: start;
     /* Add this line to give the user comment a margin-right */
 }
+
+
+@media only screen and (max-width: 1200px) {
+    .post {
+        min-width: 300px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .mainContent {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+
+    }
+
+    .author h1 {
+        font-size: calc(8pt + 3vw);
+    }
+}

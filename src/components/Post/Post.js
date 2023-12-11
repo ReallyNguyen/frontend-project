@@ -84,7 +84,7 @@ export default function OwnPost({ post }) {
 
     return (
         <div>
-            <div className={styles.post}>
+            <div className={styles.postTwo}>
                 <div className={styles.leftAndRight}>
                     <div className={styles.ownYellowColor}>
                         <div className={`${styles.vote} ${styles.leftSide}`}>

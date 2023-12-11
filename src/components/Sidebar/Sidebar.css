@@ -15,6 +15,19 @@
     z-index: 999;
 }
 
+.sidebarTwo {
+    position: absolute;
+    background-color: white;
+    min-width: 300px;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5rem;
+    z-index: 999;
+}
+
 .sideHeader {
     height: 7em;
     width: 100%;
@@ -76,4 +89,61 @@
     font-size: 18px;
     font-weight: 600;
     line-height: 100;
+}
+
+.closeIcon {
+    width: 1rem;
+    display: none;
+    cursor: pointer;
+}
+
+.openIcon {
+    width: 1rem;
+    cursor: pointer;
+}
+
+.topbar {
+    width: 100%;
+    height: 50px;
+    display: none;
+    background-color: black;
+}
+
+
+.logotwo {
+    height: 20px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .sidebar {
+        display: none;
+        position: absolute;
+    }
+
+    .topbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 3rem;
+    }
+
+    .topbarTwo {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .closeIcon {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .topbar {
+        padding: 0 1rem;
+    }
 }

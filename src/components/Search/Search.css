@@ -17,7 +17,7 @@
     align-items: center;
     gap: 1rem;
     width: 100%;
-    min-width: 1000px;
+    /* min-width: 1000px; */
 }
 
 .button {
@@ -54,7 +54,7 @@
     background-color: none;
     border: 1px solid #000;
     border-radius: 5px;
-    min-width: 300px;
+    /* min-width: 300px; */
     max-width: 900px;
     height: 40px;
     padding: 0.5em;
@@ -82,4 +82,41 @@
     justify-content: center;
     width: 30px;
     height: 30px;
+}
+
+@media only screen and (max-width: 960px) {
+    .searchbigcontainer {
+        display: none;
+    }
+
+    .button {
+        width: 30%;
+        min-width: 50px;
+    }
+
+    .button-container {
+        gap: 0;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .searchbigcontainer {
+        display: none;
+    }
+
+    .button {
+        width: 30%;
+        min-width: 50px;
+        font-size: 3vw;
+    }
+
+    .button-container {
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .search_container {
+        padding: 0 1rem;
+    }
 }
