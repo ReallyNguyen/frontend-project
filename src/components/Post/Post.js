@@ -125,7 +125,9 @@ export default function OwnPost({ post }) {
                             ) : (
                                 <p className={styles.postContent}>{postContent}</p>
                             )}
-                            <div className={styles.image}>IMAGE</div>
+                            <div className={styles.image}>
+                                <img src={post.link} alt="none" />
+                            </div>
                         </div>
                         <div className={styles.line}></div>
                         <div className={styles.likeAndComment}>
