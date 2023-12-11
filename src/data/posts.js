@@ -433,7 +433,7 @@ export const initialState = {
             link: "https://images.unsplash.com/photo-1687235446378-cd998fdd1278?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzMDd8fHxlbnwwfHx8fHw%3D"
         },
         {
-            id: 31,
+            id: 30,
             title: "BCIT Gaming Club: Let's Play Together",
             postContent: "Join the BCIT Gaming Club! Share your favorite games, organize gaming sessions, or discuss the latest releases. Whether you're into PC, console, or mobile gaming, let's connect and have fun gaming together!",
             number: 40,
@@ -448,7 +448,7 @@ export const initialState = {
             link: "https://images.unsplash.com/photo-1701651541625-e8fa78fa741d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNDV8fHxlbnwwfHx8fHw%3D"
         },
         {
-            id: 30,
+            id: 31,
             title: "BCIT Music Lovers: Share Your Playlist",
             postContent: "Are you passionate about music? Share your favorite playlists, recommend new tracks, or discuss music genres. Let's create a diverse musical community at BCIT and discover the soundtracks that inspire us!",
             number: 18,
@@ -463,7 +463,7 @@ export const initialState = {
             link: "https://images.unsplash.com/photo-1701453031893-7ba3879de2c4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNTB8fHxlbnwwfHx8fHw%3D"
         },
         {
-            id: 31,
+            id: 32,
             title: "BCIT Fitness Challenge: Week 2 Updates",
             postContent: "How's everyone doing in the BCIT Fitness Challenge? Share your progress, achievements, or challenges you've faced. Let's motivate and support each other on our fitness journeys. Remember, every step counts!",
             number: 60,
@@ -478,7 +478,7 @@ export const initialState = {
             link: "https://images.unsplash.com/photo-1701602714058-0d1403f606fd?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0MDh8fHxlbnwwfHx8fHw%3D"
         },
         {
-            id: 32,
+            id: 33,
             title: "BCIT Environmental Science Symposium",
             postContent: "Engage in discussions about environmental science at BCIT. Share research findings, discuss sustainability projects, or propose initiatives to promote eco-friendly practices on campus. Let's work together for a greener future!",
             number: 32,
@@ -493,7 +493,7 @@ export const initialState = {
             link: "https://images.unsplash.com/photo-1701453031915-60f4fc287f4d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0ODJ8fHxlbnwwfHx8fHw%3D"
         },
         {
-            id: 33,
+            id: 34,
             title: "BCIT Chess Club: Friendly Matches",
             postContent: "Join the BCIT Chess Club for friendly matches and chess discussions. Whether you're a beginner or a seasoned player, everyone is welcome! Share your chess strategies, coordinate matches, and let's build a vibrant chess community at BCIT.",
             number: 28,
