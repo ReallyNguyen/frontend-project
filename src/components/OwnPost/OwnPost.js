@@ -12,7 +12,7 @@ export default function OwnPost({ post }) {
     const [currentColorDown, setCurrentColorDown] = useState("white");
     const [isUpVoted, setIsUpVoted] = useState(false);
     const [isDownVoted, setIsDownVoted] = useState(false);
-    const [liked, setLiked] = useState(false);
+    const [liked, setLiked] = useState(post.like);
     const [likedPosts, setLikedPosts] = useState([]);
 
     const handleLike = () => {
@@ -110,7 +110,7 @@ export default function OwnPost({ post }) {
                                 <path d="M28 6.66667L4.00001 6.66667C3.75702 6.66743 3.51884 6.73445 3.3111 6.8605C3.10337 6.98656 2.93395 7.16689 2.82108 7.38207C2.70821 7.59725 2.65616 7.83915 2.67053 8.08171C2.68491 8.32428 2.76517 8.55833 2.90267 8.75867L14.9027 26.092C15.4 26.8107 16.5973 26.8107 17.096 26.092L29.096 8.75867C29.2349 8.55874 29.3164 8.32457 29.3315 8.08161C29.3467 7.83864 29.295 7.59616 29.182 7.38052C29.069 7.16488 28.8991 6.98433 28.6907 6.85847C28.4823 6.73262 28.2434 6.66628 28 6.66667Z" fill={currentColorDown} />
                             </svg>
                         </div>
-                        <h5>{post.days} days ago</h5>
+                        <h5 className={styles.white}>{post.days}<br />days ago</h5>
                     </div>
                     <div className={styles.rightSide}>
                         <div className={styles.header}>
@@ -179,12 +179,36 @@ export default function OwnPost({ post }) {
                                 </button>
                             </div>
                         </div>
-                        {comments.map((comment, index) => (
-                            <div className={styles.userComment} key={index}>
-                                <p className={styles.user}>Comment User</p>
-                                <p>{comment}</p>
+                        {post.comments && post.comments.length > 0 && (
+                            <div className={styles.userComment}>
+                                <div className={styles.commentUsername}>
+                                    {post.comments.map((comment, index) => (
+                                        <div key={index} className={styles.singleComment}>
+                                            <span className={styles.user}>{comment.user}</span>
+                                            <span className={styles.commentText}>{comment.text}</span>
+                                        </div>
+                                    ))}
+                                    {comments.map((comment, index) => (
+                                        <div className={styles.singleComment} key={index}>
+                                            <span className={styles.user}>Comment User</span>
+                                            <span>{comment}</span>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        ))}
+                        )}
+                        {post.comments.length == 0 && (
+                            <div className={styles.userComment}>
+                                <div className={styles.commentUsername}>
+                                    {comments.map((comment, index) => (
+                                        <div className={styles.singleComment} key={index}>
+                                            <span className={styles.user}>Comment User</span>
+                                            <span>{comment}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

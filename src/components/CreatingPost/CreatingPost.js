@@ -44,10 +44,11 @@ export default function CreatingPost({ onPost }) {
             title,
             postCategory: selectedCategory,
             postContent: postType,
-            days: formattedDate,
+            days: 0,
             number,
             comments: [],
             uploadedImage,
+            own: true
         };
 
         try {
@@ -62,6 +63,8 @@ export default function CreatingPost({ onPost }) {
         } catch (error) {
             setError("An error occurred while posting. Please try again.");
         }
+
+        handleToggleContainer()
     };
 
     const handleToggleContainer = () => {
@@ -79,24 +82,27 @@ export default function CreatingPost({ onPost }) {
                 <div className="postBox">
                     {isContainerOpen && (
                         <div className="topSection">
-                            <button className="exitButton" onClick={handleToggleContainer}>
-                                X
-                            </button>
-                            <input
-                                type="text"
-                                id="title"
-                                value={title}
-                                onChange={handleTitleChange}
-                                placeholder="Title"
-                                style={{
-                                    color: "#000",
-                                    fontFamily: "Inter",
-                                    fontSize: "1.5rem",
-                                    fontStyle: "normal",
-                                    fontWeight: 700,
-                                    lineHeight: "normal"
-                                }}
-                            />
+                            <div className="titleContainer">
+                                <input
+                                    type="text"
+                                    id="title"
+                                    value={title}
+                                    onChange={handleTitleChange}
+                                    placeholder="Title"
+                                    style={{
+                                        color: "black",
+                                        fontFamily: "Inter",
+                                        fontSize: "1.5rem",
+                                        fontStyle: "normal",
+                                        fontWeight: 700,
+                                        lineHeight: "normal"
+                                    }}
+                                    className="titleInput"
+                                />
+                                <button className="exitButton" onClick={handleToggleContainer}>
+                                    CLOSE
+                                </button>
+                            </div>
                             <textarea
                                 id="postType"
                                 value={postType}
@@ -111,10 +117,11 @@ export default function CreatingPost({ onPost }) {
                                     lineHeight: "normal",
                                     resize: "both",
                                     overflow: "auto",
-                                    width: "40rem",
+                                    width: "100%",
                                     minHeight: "5rem",
-                                    maxWidth: "60rem"
+                                    // maxWidth: "60rem"
                                 }}
+                                className="contentInput"
                             />
                         </div>
                     )}
@@ -133,7 +140,7 @@ export default function CreatingPost({ onPost }) {
                             </div>
                             <CategoryDropdown categories={["Campus", "Student Life", "Study Group", "Housing", "Events", "Program", "Career", "Alumni"]} handleCategoryChange={handleCategoryChange} />
                             {error && <p style={{ color: "red" }}>{error}</p>}
-                            <div className="post-btn">
+                            <div className="post-btn" >
                                 <PostBtn onPost={handlePost} />
                             </div>
                         </div>

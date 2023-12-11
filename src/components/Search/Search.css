@@ -14,15 +14,14 @@
 .button-container {
     display: flex;
     flex-direction: row;
-    gap: 15px;
     align-items: center;
+    gap: 1rem;
     width: 100%;
     min-width: 1000px;
 }
 
 .button {
     background-color: #D4D4D4;
-    margin-right: 2rem;
     border: none;
     border-radius: 50px;
     min-width: 160px;
@@ -45,9 +44,12 @@
     transform: scale(1.05);
 }
 
+.searchbigcontainer {
+    flex: 1;
+}
+
 .search-container {
     display: flex;
-    margin-left: 7rem;
     align-items: center;
     background-color: none;
     border: 1px solid #000;
@@ -81,4 +83,3 @@
     width: 30px;
     height: 30px;
 }
-

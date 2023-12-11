@@ -13,6 +13,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    border-radius: 5px;
+    padding: 5px 10px;
 }
 
 .leftAndRight {
@@ -204,15 +206,15 @@
     line-height: normal;
 }
 
-.userComment {
+.userCommentOne {
     display: flex;
     flex-direction: row;
-    margin: 0;
-    gap: 30px;
+    justify-content: flex-start;
     margin-top: 1rem;
+    padding: 0;
 }
 
-.commentUsername {
+.commentUsernameOne {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -242,6 +244,15 @@
     margin: 0;
     gap: 30px;
     margin-top: 1rem;
+}
+
+.userCommentTwo {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    gap: 30px;
+    padding: 0;
+    line-height: 0;
 }
 
 .commentUsername {

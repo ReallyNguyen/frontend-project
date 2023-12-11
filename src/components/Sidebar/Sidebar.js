@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import profile from './profile.svg';
 
 export default function Sidebar({ onCategorySelect }) {
-    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState('Everything');
 
     const handleCategoryClick = (category) => {
         setSelectedCategory(category);
@@ -23,14 +23,14 @@ export default function Sidebar({ onCategorySelect }) {
                 <img className="profile" src={profile} alt="" />
             </div>
             <div className="sideCategory">
-                {['Campus', 'Student Life', 'Study Group', 'Housing', 'Events', 'Program', 'Career', 'Alumni'].map(category => (
-                    <div key={category} className={`category ${selectedCategory === category ? 'select' : ''}`}>
-                        <span onClick={() => handleCategoryClick(category)}>{category}</span>
-                        {selectedCategory === category && (
+                {['Everything', 'Campus', 'Student Life', 'Study Group', 'Housing', 'Events', 'Program', 'Career', 'Alumni'].map(category => (
+                    <div key={category} className={`category ${selectedCategory === category ? 'select' : ''}`} onClick={() => handleCategoryClick(category)}>
+                        <span>{category}</span>
+                        {/* {selectedCategory === category && (
                             <button className="closeButton" onClick={handleClearFilter}>
                                 X
                             </button>
-                        )}
+                        )} */}
                     </div>
                 ))}
             </div>
