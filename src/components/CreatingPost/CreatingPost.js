@@ -119,7 +119,6 @@ export default function CreatingPost({ onPost }) {
                                     overflow: "auto",
                                     width: "80%",
                                     minHeight: "5rem",
-                                    // maxWidth: "60rem"
                                 }}
                                 className="contentInput"
                             />
